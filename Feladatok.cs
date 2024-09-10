@@ -32,6 +32,7 @@ namespace Foci
 
         public void Feladat2()
         {
+            Console.WriteLine("2. Feladat");
             Console.Write("Forduló Száma:");
             int forduloSzama = Convert.ToInt32(Console.ReadLine());
 
@@ -42,6 +43,22 @@ namespace Foci
                 if (item.Fordulo == forduloSzama)
                 {
                     Console.WriteLine($"{item.HazaiCsapatNev}-{item.VendegCsapatNev}: {item.HazaiGolok}-{item.VendegGolok} ({item.ElsoFelidoGolok}-{item.MarsodikFelidoGolok})");
+                }
+            }
+        }
+        public void Feladat3()
+        {
+            Console.WriteLine("3. Feladat");
+
+            foreach (var item in adatok)
+            {
+                if (item.HazaiGolok > item.VendegGolok && item.ElsoFelidoGolok < item.MarsodikFelidoGolok )
+                {
+                    Console.WriteLine($"{item.Fordulo} {item.HazaiCsapatNev}");
+                }
+                else if (item.HazaiGolok < item.VendegGolok && item.ElsoFelidoGolok > item.MarsodikFelidoGolok)
+                {
+                    Console.WriteLine($"{item.Fordulo} {item.VendegCsapatNev}");
                 }
             }
         }

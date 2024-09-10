@@ -8,6 +8,9 @@
 
             feladatok.FileBeolvasas("meccs.txt");
             feladatok.Feladat2();
+            Console.WriteLine();
+            feladatok.Feladat3();
+            Console.WriteLine();
 
             Console.ReadKey();
         }
