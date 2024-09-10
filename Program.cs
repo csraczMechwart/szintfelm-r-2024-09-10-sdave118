@@ -6,7 +6,10 @@
         {
             Feladatok feladatok = new Feladatok();
 
-            feladatok.FileBeolvasas("meccs.txt")
+            feladatok.FileBeolvasas("meccs.txt");
+            feladatok.Feladat2();
+
+            Console.ReadKey();
         }
     }
 }

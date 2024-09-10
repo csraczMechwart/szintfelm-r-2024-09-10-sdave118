@@ -8,7 +8,7 @@ namespace Foci
 {
     internal class FociAdatok
     {
-        public FociAdatok(int fordulo, int hazaiGolok, int vendegGolok, int elsoFelidoGolok, int marsodikFelidoGolok, string hazaiCsapatNev, string vendegCSapatNev)
+        public FociAdatok(int fordulo, int hazaiGolok, int vendegGolok, int elsoFelidoGolok, int marsodikFelidoGolok, string hazaiCsapatNev, string vendegCsapatNev)
         {
             Fordulo = fordulo;
             HazaiGolok = hazaiGolok;
@@ -16,7 +16,7 @@ namespace Foci
             ElsoFelidoGolok = elsoFelidoGolok;
             MarsodikFelidoGolok = marsodikFelidoGolok;
             HazaiCsapatNev = hazaiCsapatNev;
-            VendegCSapatNev = vendegCSapatNev;
+            VendegCsapatNev = vendegCsapatNev;
         }
 
         public int Fordulo {  get; set; } 
@@ -25,7 +25,7 @@ namespace Foci
         public int ElsoFelidoGolok { get; set; }
         public int MarsodikFelidoGolok { get; set; }
         public string HazaiCsapatNev {  get; set; }
-        public string VendegCSapatNev { get; set; }
+        public string VendegCsapatNev { get; set; }
 
 
 

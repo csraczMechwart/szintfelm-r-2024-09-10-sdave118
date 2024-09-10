@@ -8,7 +8,7 @@ namespace Foci
 {
     internal class Feladatok
     {
-        List<FociAdatok> adatok = new List<FociAdatok>;
+        List<FociAdatok> adatok = new List<FociAdatok>();
 
         public void FileBeolvasas(string fileNev)
         {
@@ -27,6 +27,22 @@ namespace Foci
 
                 FociAdatok ujMecss = new FociAdatok(fordulo, hazaiGolok, vendegGolok, elsoFelidoGolok, marsodikFelidoGolok, hazaiCsapatNev, vendegCsapatNev);
                 adatok.Add(ujMecss);
+            }
+        }
+
+        public void Feladat2()
+        {
+            Console.Write("Forduló Száma:");
+            int forduloSzama = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine();
+
+            foreach (var item in adatok)
+            {
+                if (item.Fordulo == forduloSzama)
+                {
+                    Console.WriteLine($"{item.HazaiCsapatNev}-{item.VendegCsapatNev}: {item.HazaiGolok}-{item.VendegGolok} ({item.ElsoFelidoGolok}-{item.MarsodikFelidoGolok})");
+                }
             }
         }
     }
