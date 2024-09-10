@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Channels;
 using System.Threading.Tasks;
 
 namespace Foci
@@ -9,6 +10,7 @@ namespace Foci
     internal class Feladatok
     {
         List<FociAdatok> adatok = new List<FociAdatok>();
+        public string eltaroltCsapatnev = "";
 
         public void FileBeolvasas(string fileNev)
         {
@@ -61,6 +63,31 @@ namespace Foci
                     Console.WriteLine($"{item.Fordulo} {item.VendegCsapatNev}");
                 }
             }
+        }
+
+        public void Feladat4()
+        {
+            bool flag = true;
+
+            Console.WriteLine("4. Feladat");
+
+            while (flag)
+            {
+                Console.WriteLine("Csapatnev: ");
+                string csapatNev = Console.ReadLine();
+                foreach (var item in adatok)
+                {
+                    if (item.HazaiCsapatNev.ToLower() == csapatNev.ToLower() || item.VendegCsapatNev.ToLower() == csapatNev.ToLower())
+                    {
+                        eltaroltCsapatnev = csapatNev;
+                        flag = false;
+                        return;
+                    }
+                }
+                Console.WriteLine("Nincs ilyen csapatnev");
+            }
+
+
         }
     }
 }
