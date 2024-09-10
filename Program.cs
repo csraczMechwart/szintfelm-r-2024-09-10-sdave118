@@ -14,6 +14,8 @@
             feladatok.Feladat4();
             Console.WriteLine();
             feladatok.Feladat5();
+            Console.WriteLine();
+            feladatok.Feladat6();
 
             Console.ReadKey();
         }

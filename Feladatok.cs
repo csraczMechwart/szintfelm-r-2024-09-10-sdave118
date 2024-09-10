@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Channels;
 using System.Threading.Tasks;
 
@@ -112,5 +113,22 @@ namespace Foci
             Console.WriteLine($"lőtt: {lottGolok} kapott: {kapottGolok}");
         }
 
+        public void Feladat6()
+        {
+            Console.WriteLine("6. Feladat");
+            var list = adatok.OrderBy(x => x.Fordulo).ToList();
+
+
+
+            foreach (var item in list)
+            {
+                if (item.HazaiCsapatNev.ToLower() == eltaroltCsapatnev && item.HazaiGolok < item.VendegGolok)
+                {
+                    Console.WriteLine($"A csapat a(z) {item.Fordulo}. forduloban kapott ki a(z) {item.VendegCsapatNev} csapattól");
+                    return;
+                }
+            }
+            Console.WriteLine("Ez a csapat veretlen maradt");
+        }
     }
 }
