@@ -73,7 +73,7 @@ namespace Foci
 
             while (flag)
             {
-                Console.WriteLine("Csapatnev: ");
+                Console.Write("Csapatnev: ");
                 string csapatNev = Console.ReadLine();
                 foreach (var item in adatok)
                 {
@@ -89,5 +89,28 @@ namespace Foci
 
 
         }
+
+        public void Feladat5()
+        {
+            Console.WriteLine("5. Feladat");
+            int lottGolok = 0, kapottGolok = 0;
+
+            foreach (var item in adatok)
+            {
+                if (item.HazaiCsapatNev.ToLower() == eltaroltCsapatnev)
+                {
+                    lottGolok += item.HazaiGolok;
+                    kapottGolok += item.VendegGolok;
+                }
+                else if (item.VendegCsapatNev.ToLower() == eltaroltCsapatnev)
+                {
+                    lottGolok += item.VendegGolok;
+                    kapottGolok += item.HazaiGolok;
+                }
+            }
+
+            Console.WriteLine($"lőtt: {lottGolok} kapott: {kapottGolok}");
+        }
+
     }
 }
